@@ -7,9 +7,7 @@ namespace SummaryAPI
         {
         }
 
-        public string? status { get; set; }
         public int? num_results { get; set; }
-        public string? copyright { get; set; }
         public Result[]? results { get; set; }
 
 
@@ -17,8 +15,8 @@ namespace SummaryAPI
         {
             foreach (var result in results)
             {
+                Console.WriteLine($"{result.book_title}");
                 Console.WriteLine($"{result.summary}");
-
                 Console.WriteLine();
             }
         }

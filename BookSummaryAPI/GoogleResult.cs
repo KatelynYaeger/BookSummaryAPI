@@ -12,13 +12,22 @@ namespace SummaryAPI
 
         public void GoogleMethod()
         {
-            foreach (var item in items)
+            try
             {
-                Console.WriteLine($"{item.volumeInfo.title}");
+                    foreach (var item in items)
+                    {
+                        Console.WriteLine($"{item.volumeInfo.title}");
 
-                Console.WriteLine($"{item.volumeInfo.description}");
+                        Console.WriteLine($"{item.volumeInfo.description}");
 
-                Console.WriteLine();
+                        Console.WriteLine();
+                    }
+
+                Console.WriteLine("Here are the results!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("That doesn't look right...");
             }
         }
     }

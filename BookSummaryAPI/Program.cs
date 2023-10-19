@@ -35,7 +35,6 @@ var nytKey = nytSettings.Value.ApiKey;
 
 var client = new HttpClient();
 
-
 Console.WriteLine("Welcome!");
 
 bool cont = true;
@@ -62,19 +61,16 @@ while (cont)
 
     var _result = googleObject.ToObject(typeof(GoogleResult)) as GoogleResult;
 
+    string answer;
+
     void answerMethod()
     {
         Console.WriteLine("Let's check Google");
 
         Console.WriteLine();
 
-        if (_result != null) _result.GoogleMethod();
-
-        Console.WriteLine("Here are the results!");
+       _result.GoogleMethod();
     }
-
-
-    string answer;
 
     Console.WriteLine("----");
 
