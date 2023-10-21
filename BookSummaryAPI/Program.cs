@@ -5,28 +5,23 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using SummaryAPI;
 
-var googleConfig = new ConfigurationBuilder()
+var config = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile("appsettings.json")
                  .Build();
 
 var googleServices = new ServiceCollection()
    .AddOptions()
-   .Configure<GoogleBooksApi>(googleConfig.GetSection("GoogleBooksApi"))
+   .Configure<GoogleBooksApi>(config.GetSection("GoogleBooksApi"))
    .BuildServiceProvider();
 
 var googleSettings = googleServices.GetService<IOptions<GoogleBooksApi>>();
 
 var googleKey = googleSettings.Value.ApiKey;
 
-var nytConfig = new ConfigurationBuilder()
-                 .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile("appsettings.json")
-                 .Build();
-
 var nytServices = new ServiceCollection()
    .AddOptions()
-   .Configure<NYTimesApi>(nytConfig.GetSection("NYTimesApi"))
+   .Configure<NYTimesApi>(config.GetSection("NYTimesApi"))
    .BuildServiceProvider();
 
 var nytSettings = nytServices.GetService<IOptions<NYTimesApi>>();
