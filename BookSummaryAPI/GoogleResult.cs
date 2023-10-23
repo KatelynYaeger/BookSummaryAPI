@@ -14,7 +14,11 @@ namespace SummaryAPI
         {
             try
             {
-                    foreach (var item in items)
+                Console.WriteLine("Let's check Google");
+
+                Console.WriteLine();
+
+                foreach (var item in items)
                     {
                         Console.WriteLine($"{item.volumeInfo.title}");
 

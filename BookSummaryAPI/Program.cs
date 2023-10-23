@@ -58,15 +58,6 @@ while (cont)
 
     string answer;
 
-    void answerMethod()
-    {
-        Console.WriteLine("Let's check Google");
-
-        Console.WriteLine();
-
-       _result.GoogleMethod();
-    }
-
     Console.WriteLine("----");
 
     summaryResult.NYTMethod();
@@ -79,7 +70,7 @@ while (cont)
 
         if (answer.ToLower() == "no")
         {
-            answerMethod();
+            _result.GoogleMethod();
         }
 
     }
@@ -87,7 +78,7 @@ while (cont)
     {
         Console.WriteLine("I'm sorry, but the New York Times doesn't have a summary for this book.");
 
-        answerMethod();
+        _result.GoogleMethod();
 
     }
 
